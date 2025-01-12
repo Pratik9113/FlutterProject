@@ -13,9 +13,19 @@ class _CurrencyConverterMaterialPageState
   double result = 0.0;
   final TextEditingController textEditingController = TextEditingController();
   void convert() {
-    setState(() {
-      result = double.parse(textEditingController.text) * 81;
-    });
+    result = double.parse(textEditingController.text) * 81;
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
   }
 
   @override
