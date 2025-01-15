@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:shop_app/home_page.dart';
+import 'package:shop_app/product_detail_page.dart';
 
 void main() {
   runApp(
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Lato',
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromRGBO(254, 206, 1, 1),
+          seedColor: Color.fromRGBO(255, 255, 255, 1),
+          primary: Color.fromRGBO(254, 206, 1, 1),
         ),
         inputDecorationTheme: InputDecorationTheme(
           hintStyle: TextStyle(
@@ -31,8 +33,18 @@ class MyApp extends StatelessWidget {
           ),
           prefixIconColor: Color.fromRGBO(119, 119, 119, 1),
         ),
+        textTheme: const TextTheme(
+          titleMedium: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+          bodySmall: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
-      home: const HomePage(),
+      home: const ProductDetailPage(),
     );
   }
 }
