@@ -11,7 +11,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentPage = 0;
-  List<Widget> pages = [HomeSectionPage()];
+  List<Widget> pages = [
+    HomeSectionPage(),
+    MapPage(),
+    Center(child: Text('Emission Page')),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,18 +25,24 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 28,
-        items: const [
+        currentIndex: currentPage,
+        onTap: (value) {
+          setState(() {
+            currentPage = value;
+          });
+        },
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.co2_sharp),
-            label: 'Emission',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.location_on),
             label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.co2_sharp),
+            label: 'Emission',
           ),
         ],
       ),
