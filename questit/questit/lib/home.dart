@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:questit/task_cart.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -12,55 +13,43 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('QuestIT'),
+        title: Text(
+          'TODOS',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        backgroundColor: Colors.blueAccent,
         centerTitle: true,
-        foregroundColor: Colors.white,
-        elevation: 10,
-        shadowColor: Colors.black,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            color: Colors.amberAccent,
-            height: 100,
-            width: 100,
-          ),
-          Container(
-            color: Colors.amberAccent,
-            height: 100,
-            width: 100,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-              Container(
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-              Container(
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ],
-          ),
-          ElevatedButton(
+        actions: [
+          IconButton(
             onPressed: () {},
-            child: Text('Button'),
+            icon: Icon(Icons.add),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
+      body: Column(
+        children: [
+          TaskCart(
+            todoTitle: "Valentine Day",
+            todoDescription: "QuestIT Workshop",
+            todoDate: "14-02-2004",
+            todoTime: "1:00 AM",
+          ),
+          TaskCart(
+            todoTitle: "Valentine Day",
+            todoDescription: "QuestIT Workshop",
+            todoDate: "14-02-2004",
+            todoTime: "1:00 AM",
+          ),
+          TaskCart(
+            todoTitle: "Valentine Day",
+            todoDescription: "QuestIT Workshop",
+            todoDate: "14-02-2004",
+            todoTime: "1:00 AM",
+          ),
+        ],
       ),
     );
   }
